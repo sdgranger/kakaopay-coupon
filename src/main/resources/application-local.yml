@@ -1,3 +1,5 @@
+
+
 spring:
   h2:
     console:
@@ -22,3 +24,5 @@ spring:
 jwt:
   secret-key:
     authentication: WIREbeT90oV8akG86iaQKRI0JPgEm6Gp
+server:
+  port: 8099

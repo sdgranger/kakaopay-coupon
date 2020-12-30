@@ -9,17 +9,18 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-    protected void configure(HttpSecurity security) throws Exception {
-        security.httpBasic().disable()
-                .csrf().disable()
-                .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                    .authorizeRequests()
-                        .anyRequest()
-                            .hasRole("USER")
-                .and()
-                    .headers()
-                        .frameOptions().disable();
-    }
+  protected void configure(HttpSecurity security) throws Exception {
+    security.httpBasic().disable()
+            .csrf().disable()
+            .sessionManagement()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
+            .authorizeRequests()
+            .anyRequest()
+            .permitAll()
+            //.hasRole("USER")
+            .and()
+            .headers()
+            .frameOptions().disable();
+  }
 }

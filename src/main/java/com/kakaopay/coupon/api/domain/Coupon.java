@@ -1,4 +1,4 @@
-package com.kakaopay.coupon.domain;
+package com.kakaopay.coupon.api.domain;
 
 import lombok.AccessLevel;
 import lombok.Builder;

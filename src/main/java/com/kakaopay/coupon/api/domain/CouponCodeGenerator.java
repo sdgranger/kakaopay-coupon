@@ -1,4 +1,4 @@
-package com.kakaopay.coupon.domain;
+package com.kakaopay.coupon.api.domain;
 
 import java.util.Random;
 import java.util.UUID;

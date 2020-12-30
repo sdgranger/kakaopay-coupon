@@ -1,4 +1,4 @@
-package com.kakaopay.coupon.domain;
+package com.kakaopay.coupon.api.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

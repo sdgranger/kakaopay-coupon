@@ -1,4 +1,4 @@
-package com.kakaopay.coupon.domain;
+package com.kakaopay.coupon.api.domain;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

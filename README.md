@@ -38,13 +38,13 @@ java -Dspring.profiles.active=local -jar coupon-0.0.1-SNAPSHOT.jar
   - 2가지 방안 중 후자를 선택
 - 대량 쿠폰생성
   - 현재 개발된 쿠폰생성 API 는 한번에 많은 쿠폰생성을 하기 위한 요구사항에 적합하지 않음.
-  - 현재 스인 JPA 에서는 id 전략이 identity 일 경우 auto_increment 후에 영속화해야하므로 JPA 지원 안됨.
+  - 현재 스펙인 JPA 에서는 id 전략이 identity 일 경우 auto_increment 후에 영속화해야하므로 JPA 에서 지원 안됨.
   - 개선해야될점 : auto_increment 를 사용하지 않거나 다른 방법으로 구현해야함.
     후자의 경우 bulk insert 를 위한 방안으로 JDBC template 같은 방법으로 batch insert 를 구현해야 한다. 
 - 보안
-  - API 의 인증 및 인가을 고려하기 위해 JWT 를 이용한 인증기능 추가 (알고리즘 : Hmac SHA256)
+  - API 의 인증 및 인가을 고려하기 위해 JWT 를 이용한 인증기능 추가 (알리즘 : Hmac SHA256)
   - Spring Security 를 사용하고 기존기능에 확장하여 개발함. package : com.kakaopay.coupon.auth.security
   - 인증 Request Header example) Authorization: Bearer XXXXXXXXXXXXXX...
   - 쿠폰을 사용자에게 발급하는 API 는 일반 유저가 API 에 접근하면 안되기 때문에 어드민 권한을 고려해야함.
   - 에러 발생시 사용자에게 시스템오류를 상세히 알려주지 않도록 감추어야 하며 잘못된 요청이나 오류처리를 위한 
-    공통에러 메세지를 고려하기 위해 Spring Boot 에서 지원가능한 ErrorAttributes 를 오버라이딩 하여 사용함.
+    공통에러 메세지를 고려하기 위해 Spring Boot 에서 지원하고있는 ErrorAttributes 를 오버라이딩 하여 사용함.

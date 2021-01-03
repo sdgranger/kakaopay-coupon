@@ -8,5 +8,4 @@ import lombok.Setter;
 @Setter
 public class StatusUpdateRequestDto {
   private Status status;
-  private String couponCode;
 }

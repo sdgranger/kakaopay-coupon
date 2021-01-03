@@ -36,22 +36,22 @@ public class CouponController {
     return ApiResponse.ok(userCoupons);
   }
 
-  @PutMapping("/api/coupon/publication")
-  public ApiResponse<PublishResponseDto> publish(PublishRequestDto dto){
-    CouponDto coupon = couponCommandService.publish(dto.getCouponCode(), dto.getUserNo());
+  @PutMapping("/api/coupon/{couponCode}/publication")
+  public ApiResponse<PublishResponseDto> publish(@PathVariable String couponCode, PublishRequestDto dto){
+    CouponDto coupon = couponCommandService.publish(couponCode, dto.getUserNo());
 
     return ApiResponse.ok(new PublishResponseDto(coupon.getCode()));
   }
 
-  @PutMapping("/api/coupon/status")
-  public ApiResponse use(StatusUpdateRequestDto dto){
+  @PutMapping("/api/coupon/{couponCode}/status")
+  public ApiResponse use(@PathVariable String couponCode, StatusUpdateRequestDto dto){
     CouponDto useCoupon;
     switch (dto.getStatus()){
       case USED:
-        useCoupon = couponCommandService.use(dto.getCouponCode());
+        useCoupon = couponCommandService.use(couponCode);
         break;
       case PUBLISHED:
-        useCoupon = couponCommandService.cancel(dto.getCouponCode());
+        useCoupon = couponCommandService.cancel(couponCode);
         break;
       default:
         throw new InValidRequestException("invalid request status");

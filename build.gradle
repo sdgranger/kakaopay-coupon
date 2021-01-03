@@ -8,6 +8,10 @@ group = 'com.kakaopay'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+test {
+    systemProperty 'spring.profiles.active', 'test'
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -28,6 +32,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    compile 'io.jsonwebtoken:jjwt-api:0.10.5'
+    compile 'io.jsonwebtoken:jjwt-impl:0.10.5'
+    runtime 'io.jsonwebtoken:jjwt-jackson:0.10.5'
 }
 
 test {

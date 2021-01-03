@@ -28,7 +28,7 @@ java -Dspring.profiles.active=local -jar coupon-0.0.1-SNAPSHOT.jar
   - 중복 코드 방지를 위해 현재시간과 난수문자로 결합 
   - 쿠폰코드의 무결성 방지를 위해 15자리 코드를 해시함수로 2자리 생성
   - 쿠폰생성시간(11)+난수문자(4)+해쉬코드문자(2) = 총 17자리 코드
-- 쿠폰 알림 발송
+- 쿠폰 알림 송
   - 10시마다 만료된 쿠폰을 알림을 발송하도록 Scheduling 기능사용
   - 개선해야될점 : Batch 알림을 기존 어플리케이션에 영향을 주지 않고 따로 독립하여 배포 할 수 있도록 요구됨
 - 쿠폰 만료상태 관리
@@ -48,4 +48,4 @@ java -Dspring.profiles.active=local -jar coupon-0.0.1-SNAPSHOT.jar
   - 인증 Request Header example) Authorization: Bearer XXXXXXXXXXXXXX...
   - 쿠폰을 사용자에게 발급하는 API 는 일반 유저가 API 에 접근하면 안되기 때문에 어드민 권한을 고려해야함.
   - 에러 발생시 사용자에게 시스템오류를 상세히 알려주지 않도록 감추어야 하며 잘못된 요청이나 오류처리를 위한 
-    공통에러 메세지를 고려하기 위해 Spring Boot 에서 지원하고있 ErrorAttributes 를 오버라이딩 하여 사용함.
+    공통에러 메세지를 고려하기 위해 Spring Boot 에서 지원하고있는 ErrorAttributes 를 오버라이딩 하여 사용함.

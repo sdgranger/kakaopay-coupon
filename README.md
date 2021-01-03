@@ -44,7 +44,7 @@ java -Dspring.profiles.active=local -jar coupon-0.0.1-SNAPSHOT.jar
 - 보안
   - JWT 를 이용한 인증기능 추가 (알고리즘 : Hmac SHA256) 
   - Spring Security 를 사용하고 기존기능에 확장하여 개발함. package : com.kakaopay.coupon.auth.security
-  - 인가를 통해 권한을 가진 유저만 호출 할 수 있도록 했으며 유효한 토큰정보 유저번호를(no)를 가지고 있어 사용자를 식별
+  - 인가를 통해 권한을 가진 유저만 호출 할 수 있도록 했으며 유효한 토큰정보에 유저번호를(no)를 가지고 있어 사용자를 식별
   - 인증 Request Header : ex) Authorization: Bearer XXXXXXXXXXXXXX...
   - 쿠폰을 사용자에게 발급하는 API 는 일반 유저가 API 에 접근하면 안되기 때문에 어드민 권한을 고려해야함.
   - 에러 발생시 사용자에게 시스템오류를 상세히 알려주지 않도록 감추어야 하며 잘못된 요청이나 오류처리를 위한 

@@ -31,7 +31,7 @@ public class CouponCodeGenerator {
       int i = Integer.parseInt(String.valueOf(c), 16);
       sum += i;
     }
-    return Long.toHexString(sum);
+    return String.format("%02x", sum);
   }
 
   public boolean isValid(String code) {

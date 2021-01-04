@@ -24,9 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .and()
             .authorizeRequests()
             .antMatchers("/api/coupon").permitAll()
-            .antMatchers("/api/coupon/publication").hasAuthority("ROLE_USER")
-            .antMatchers("/api/coupon/users/{userNo}",
-                    "/api/coupon/status/{status}").hasAuthority("ROLE_USER")
+            .antMatchers("/api/coupon/**").hasAuthority("ROLE_USER")
             .anyRequest()
             .permitAll()
             .and()
